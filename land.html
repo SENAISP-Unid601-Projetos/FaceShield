@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceShield - Biometria Facial Inteligente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="Style/Styles.css">
+    <link rel="icon" href="Assets/download.png">
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <img src="Assets/logo.png"  class="logo-img">
+                <span>FaceShield</span>
+            </a>
+            
+            <button class="mobile-menu" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                <li><a href="#tecnologia" class="nav-link">Tecnologia</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            
+            <div class="nav-overlay"></div> <!-- Adicione esta linha -->
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio" data-aos="fade-up">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Revolução em Autenticação Biométrica</h1>
+                <p>Sistema inteligente de reconhecimento facial com criptografia de última geração</p>
+                <a href="#contato" class="cta-button">Começar Agora</a>
+            </div>
+            <div class="hero-visual">
+                <div class="face-scan" data-aos="zoom-in-left">
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="sobre">
+        <div class="grid-4">
+            <div class="feature-card" data-aos="fade-up">
+                <div>
+                    <i class="fas fa-user-shield icon-tech"></i>
+                    <h3>Sobre Nós</h3>
+                    <p>Estamos desenvolvendo uma solução inovadora que utiliza biometria facial para aumentar a segurança e eficiência no monitoramento
+                         de ferramentas. Nosso objetivo é criar um sistema confiável e intuitivo, integrando tecnologia de reconhecimento facial
+                          e sensores para um controle preciso e automatizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="tecnologia">
+        <div class="grid-4">
+            <div class="feature-card" data-aos="fade-up">
+                <div>
+                    <i class="fas fa-brain icon-tech"></i>
+                    <h3>Tecnologia</h3>
+                    <p>Tecnologia Nossa solução utiliza tecnologias avançadas para garantir segurança e eficiência no reconhecimento facial.
+                         Entre os principais recursos, destacamos:
+                       </p>
+                    <ul style="text-align: left; margin: 1rem 0;">
+                        <li> <b> Reconhecimento 3D anti-fraude </b> para evitar tentativas de falsificação.</li>
+                        <li> <b>Criptografia avançada </b> para proteção de dados com máxima segurança.</li>
+                        <li> <b>Processamento em tempo </b> real para respostas rápidas e precisas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="contato">
+        <div class="contact-form" data-aos="fade-up">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Fale Conosco</h2>
+            
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Seu telefone">
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido Por FaceShield - Tecnologia em Biometria Facial</p>
+        <p style="margin-top: 1rem;">© 2025 FaceShield. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="Script/Scripts.js"></script>
+</body>
+</html>
