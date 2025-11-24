@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceShield - Login Professor</title>
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <link rel="stylesheet" href="../Style/LoginProfessor.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="background-image"></div>
+      <div class="background-overlay"></div>
+    </div>
+
+    <div class="botaoVoltar">
+      <a class="buttonVoltar" href="../index.html">Voltar</a>
+    </div>
+    <main class="main-content">
+      <div class="logo-container">
+        <img
+          src="../Assets/LogoFaceShield.png"
+          alt="Logo da Empresa"
+          class="logo"
+        />
+      </div>
+
+      <div class="form-container">
+        <form id="loginForm" class="form-grid">
+          <h1 class="title">Login Professor</h1>
+          <div class="input-group floating-label">
+            <input type="text" id="username" required />
+            <label for="username">Nome de Usuário</label>
+            <div class="input-border"></div>
+            <span class="validation-icon"></span>
+          </div>
+
+          <div class="input-group floating-label">
+            <input type="password" id="senha" required />
+            <label for="senha">Senha</label>
+            <div class="input-border"></div>
+            <span class="validation-icon"></span>
+          </div>
+
+          <button type="submit" class="botao">Entrar</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="../Scripts/LoginProfessor.js"></script>
+  </body>
+</html>

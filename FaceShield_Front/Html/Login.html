@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FaceShield - Login</title>
+    <link rel="stylesheet" href="../Style/Login.css" />
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <script src="../Scripts/Login.js" defer></script>
+  </head>
+  <body>
+    <div class="decorative-border"></div>
+
+    <div class="login-container">
+      <h1>Login com Reconhecimento Facial</h1>
+
+      <div class="face-scan-widget">
+        <video id="video" autoplay playsinline muted></video>
+        <div class="scan-animation-overlay"></div>
+        <div class="scanning-line-effect"></div>
+      </div>
+
+      <p id="mensagem">Aguardando reconhecimento...</p>
+
+      <div class="botaoProf">
+        <a href="LoginProfessor.html" class="buttonProfessor"
+          >Login Professor</a
+        >
+        <a href="../index.html" class="buttonVoltar">Voltar</a>
+      </div>
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback" class="feedback"></div>
+
+    <div class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+  </body>
+</html>

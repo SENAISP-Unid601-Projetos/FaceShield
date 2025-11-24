@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceShield - Novo Empréstimo</title>
+    <link rel="stylesheet" href="../Style/PostEmp.css" />
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <script src="../Scripts/PostEmp.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="../Assets/LogoFaceShield.png"
+            alt="Logo FaceShield"
+            class="sidebar-logo-img"
+          />
+          <h2>FaceShield</h2>
+        </div>
+        <div class="menu-item" onclick="window.location.href='Usuarios.html'">
+          <i class="fas fa-user"></i> <span>Usuários</span>
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='Emprestimos.html'"
+        >
+          <i class="fas fa-clipboard-list"></i> <span>Empréstimos</span>
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='Ferramentas.html'"
+        >
+          <i class="fas fa-toolbox"></i> <span>Ferramentas</span>
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='./HistoricoTrava.html'"
+        >
+          <i class="fas fa-history"></i> Histórico de Trava
+        </div>
+        <div class="menu-item" onclick="window.location.href='Local.html'">
+          <i class="fas fa-map-marker-alt"></i> <span>Locais</span>
+        </div>
+        <div
+          class="menu-item active"
+          onclick="window.location.href='PostEmp.html'"
+        >
+          <i class="fas fa-plus-circle"></i> <span>Novo Empréstimo</span>
+        </div>
+        <div class="menu-item" onclick="window.location.href='./Menu.html'">
+          <i class="fas fa-sign-out-alt"></i> <span>Sair</span>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">
+            <i class="fas fa-plus-circle"></i> Novo Empréstimo
+          </h1>
+
+          <div class="header-buttons">
+            <button class="btn" id="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+
+            <button
+              class="logout-btn"
+              onclick="window.location.href='Menu.html'"
+            >
+              <i class="fas fa-sign-out-alt"></i> Sair para Menu
+            </button>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+
+        <div class="form-container">
+          <h2 class="form-section-title">
+            <i class="fas fa-user"></i> Dados do Emprestimo
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="aluno"><i class="fas fa-user"></i> Usuário</label>
+              <select id="aluno" required>
+                <option value="">Carregando usuários...</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="turma"><i class="fas fa-users"></i> Turma</label>
+              <input type="text" id="turma" readonly />
+            </div>
+          </div>
+
+          <h2 class="form-section-title">
+            <i class="fas fa-tools"></i> Dados da Ferramenta
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ferramenta"
+                ><i class="fas fa-toolbox"></i> Ferramenta</label
+              >
+              <select id="ferramenta" required>
+                <option value="">Carregando ferramentas...</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="localizacao"
+                ><i class="fas fa-map-marker-alt"></i> Localização</label
+              >
+              <input type="text" id="localizacao" readonly />
+            </div>
+          </div>
+
+          <h2 class="form-section-title">
+            <i class="fas fa-calendar-alt"></i> Datas do Empréstimo
+          </h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="data-retirada"
+                ><i class="fas fa-arrow-up"></i> Data de Retirada</label
+              >
+              <input type="text" id="data-retirada" readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="data-devolucao"
+                ><i class="fas fa-arrow-down"></i> Data de Devolução
+              </label>
+              <input type="datetime-local" id="data-devolucao" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="observacoes"
+              ><i class="fas fa-sticky-note"></i> Observações</label
+            >
+            <textarea
+              id="observacoes"
+              rows="3"
+              placeholder="Informações adicionais sobre o empréstimo"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-cancel" id="btn-cancelar">
+              <i class="fas fa-times"></i> Cancelar
+            </button>
+            <button type="button" class="btn btn-submit" id="btn-registrar">
+              <i class="fas fa-check"></i> Registrar Empréstimo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

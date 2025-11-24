@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #00e0ff;
+  --secondary-color: #0f172a;
+  --accent-color: #ff4d7d;
+  --background-gradient: linear-gradient(
+    135deg,
+    #00141f 0%,
+    #0f172a 40%,
+    #1e293b 100%
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--background-gradient);
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
+.menu-card h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.menu-card p {
+  margin-bottom: 0;
+}
+
+.logout-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.logout-btn:hover {
+  background: #ff3366;
+  transform: translateY(-2px);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1024px) {
+  .menu-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    padding: 20px;
+  }
+
+  .menu-card {
+    padding: 20px;
+  }
+
+  .menu-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .menu-card {
+    padding: 12px;
+  }
+
+  .menu-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .logout-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    bottom: 15px;
+    right: 15px;
+  }
+}

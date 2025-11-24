@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceShield - Menu</title>
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../Scripts/MenuProfessor.js" defer></script>
+    <link rel="stylesheet" href="../Style/Menu.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Sistema do Professor</h1>
+    </div>
+
+    <div class="menu-container">
+      <!-- Alunos -->
+      <div
+        class="menu-card"
+        id="alunos"
+        onclick="window.location.href='Usuarios.html'"
+      >
+        <h2>Usuários</h2>
+        <p>Lista de Usuários</p>
+      </div>
+
+      <!-- Empréstimos -->
+      <div
+        class="menu-card"
+        id="emprestimos"
+        onclick="window.location.href='Emprestimos.html'"
+      >
+        <h2>Empréstimos</h2>
+        <p>Histórico de itens emprestados</p>
+      </div>
+
+      <!-- Ferramentas -->
+      <div
+        class="menu-card"
+        id="ferramentas"
+        onclick="window.location.href='Ferramentas.html'"
+      >
+        <h2>Ferramentas</h2>
+        <p>Lista de ferramentas</p>
+      </div>
+
+      <!-- Histórico de Trava -->
+      <div
+        class="menu-card"
+        id="historico-trava"
+        onclick="window.location.href='HistoricoTrava.html'"
+      >
+        <h2>Histórico de Trava</h2>
+        <p>Registro de travas</p>
+      </div>
+
+      <!-- Locais -->
+      <div
+        class="menu-card"
+        id="locais"
+        onclick="window.location.href='Local.html'"
+      >
+        <h2>Locais</h2>
+        <p>Áreas cadastradas</p>
+      </div>
+
+      <!-- Novo Empréstimo -->
+      <div
+        class="menu-card"
+        id="novo-emprestimo"
+        onclick="window.location.href='PostEmp.html'"
+      >
+        <h2>Fazer Empréstimo</h2>
+        <p>Registrar empréstimos</p>
+      </div>
+    </div>
+
+    <a class="logout-btn" id="logout">Sair</a>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceShield - Locais</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <link rel="stylesheet" href="../Style/Local.css" />
+    <script src="../Scripts/Local.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="../Assets/LogoFaceShield.png"
+            alt="Logo FaceShield"
+            class="sidebar-logo-img"
+          />
+          <h2>FaceShield</h2>
+        </div>
+        <div class="menu-item" onclick="window.location.href='Usuarios.html'">
+          <i class="fas fa-user"></i> Usuários
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='Emprestimos.html'"
+        >
+          <i class="fas fa-clipboard-list"></i> Empréstimos
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='Ferramentas.html'"
+        >
+          <i class="fas fa-toolbox"></i> Ferramentas
+        </div>
+        <div
+          class="menu-item"
+          onclick="window.location.href='./HistoricoTrava.html'"
+        >
+          <i class="fas fa-history"></i> Histórico de Trava
+        </div>
+        <div
+          class="menu-item active"
+          onclick="window.location.href='Local.html'"
+        >
+          <i class="fas fa-map-marker-alt"></i> Locais
+        </div>
+        <div class="menu-item" onclick="window.location.href='PostEmp.html'">
+          <i class="fas fa-plus-circle"></i> Novo Empréstimo
+        </div>
+        <div class="menu-item" onclick="window.location.href='./Menu.html'">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">
+            <i class="fas fa-map-marked-alt"></i> Gerenciamento de Locais
+          </h1>
+
+          <div class="header-buttons">
+            <button class="btn" id="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+
+            <button
+              class="logout-btn"
+              onclick="window.location.href='Menu.html'"
+            >
+              <i class="fas fa-sign-out-alt"></i> Sair para Menu
+            </button>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-primary" id="add-location-btn">
+            <i class="fas fa-plus"></i> Adicionar Local
+          </button>
+          <button class="btn btn-purple" id="view-toggle-btn">
+            <i class="fas fa-th"></i> Visualização em Cards
+          </button>
+        </div>
+
+        <div class="search-section">
+          <div class="search-group">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Pesquisar local..."
+            />
+          </div>
+        </div>
+
+        <div id="table-view">
+          <div style="overflow-x: auto">
+            <table class="locations-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Espaço</th>
+                  <th>Armário</th>
+                  <th>Prateleira</th>
+                  <th>Estojo</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="locations-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="card-view" style="display: none">
+          <div class="location-grid" id="location-grid"></div>
+        </div>
+
+        <div id="empty-state" class="empty-state" style="display: none">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Nenhum local cadastrado</h3>
+          <p>Adicione novos locais para começar a organizar suas ferramentas</p>
+          <button
+            class="btn btn-primary"
+            style="margin-top: 20px"
+            id="add-first-location"
+          >
+            <i class="fas fa-plus"></i> Adicionar Primeiro Local
+          </button>
+        </div>
+
+        <div id="location-modal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 id="modal-title">Adicionar Novo Local</h2>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form id="location-form">
+                <input type="hidden" id="location-id" />
+
+                <div class="form-group">
+                  <label for="location-space">Nome do Espaço *</label>
+                  <input
+                    type="text"
+                    id="location-space"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="location-cabinet">Armário *</label>
+                    <input
+                      type="text"
+                      id="location-cabinet"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="location-shelf">Prateleira *</label>
+                    <input
+                      type="text"
+                      id="location-shelf"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="location-case">Estojo (opcional)</label>
+                  <input type="text" id="location-case" class="form-control" />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" id="cancel-btn">Cancelar</button>
+              <button class="btn btn-primary" id="save-btn">
+                Salvar Local
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="notification" class="notification" style="display: none"></div>
+    <div id="loading-overlay" class="loading-overlay" style="display: none">
+      <div class="loading-spinner"></div>
+    </div>
+  </body>
+</html>

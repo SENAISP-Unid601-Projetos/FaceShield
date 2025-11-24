@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FaceShield - Histórico</title>
+    <script src="../Scripts/HistoricoTrava.js" defer></script>
+    <link rel="stylesheet" href="../Style/HistoricoTrava.css" />
+    <link rel="icon" type="image/png" href="/front/Assets/LogoFaceShield.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="../Assets/LogoFaceShield.png"
+            alt="Logo FaceShield"
+            class="sidebar-logo-img"
+          />
+          <h2>FaceShield</h2>
+        </div>
+
+        <div class="menu-item" onclick="window.location.href='Usuarios.html'">
+          <i class="fas fa-user"></i>Usuários
+        </div>
+
+        <div
+          class="menu-item"
+          onclick="window.location.href='Emprestimos.html'"
+        >
+          <i class="fas fa-clipboard-list"></i> Empréstimos
+        </div>
+
+        <div
+          class="menu-item"
+          onclick="window.location.href='Ferramentas.html'"
+        >
+          <i class="fas fa-toolbox"></i> Ferramentas
+        </div>
+
+        <div
+          class="menu-item active"
+          onclick="window.location.href='Historico.html'"
+        >
+          <i class="fas fa-history"></i> Histórico
+        </div>
+
+        <div class="menu-item" onclick="window.location.href='Local.html'">
+          <i class="fas fa-map-marker-alt"></i> Locais
+        </div>
+
+        <div class="menu-item" onclick="window.location.href='PostEmp.html'">
+          <i class="fas fa-plus-circle"></i> Novo Empréstimo
+        </div>
+
+        <div class="menu-item" onclick="window.location.href='./Menu.html'">
+          <i class="fas fa-sign-out-alt"></i> Sair
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="header">
+          <h1 class="page-title">
+            <i class="fas fa-history"></i> Histórico de Acesso
+          </h1>
+
+          <div class="header-buttons">
+            <button class="btn" id="theme-toggle-btn">
+              <i class="fas fa-moon"></i>
+            </button>
+
+            <button
+              class="logout-btn"
+              onclick="window.location.href='Menu.html'"
+            >
+              <i class="fas fa-sign-out-alt"></i> Sair para Menu
+            </button>
+          </div>
+        </div>
+
+        <div class="search-section">
+          <div class="search-group">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Pesquisar ID ou Username..."
+              oninput="searchHistory()"
+            />
+          </div>
+          <button class="btn btn-primary" onclick="loadHistoryTable()">
+            <i class="fas fa-sync-alt"></i> Atualizar
+          </button>
+        </div>
+
+        <div style="overflow-x: auto">
+          <table class="students-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Data de Abertura</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

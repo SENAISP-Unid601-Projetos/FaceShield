@@ -1,0 +1,324 @@
+:root {
+  --primary-color: #00e0ff;
+  --secondary-color: #0f172a;
+  --accent-color: #ff4d7d;
+  --background-gradient: linear-gradient(
+    135deg,
+    #00141f 0%,
+    #0f172a 40%,
+    #1e293b 100%
+  );
+  --neon-shadow: 0 0 15px var(--primary-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-gradient);
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.decorative-border {
+  position: fixed;
+  pointer-events: none;
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--neon-shadow);
+  opacity: 0.3;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.botaoVoltar {
+  width: 90%;
+  display: flex;
+  justify-content: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buttonVoltar {
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid red;
+  transition: all 0.3s ease;
+  box-shadow: red;
+}
+
+.buttonVoltar:hover {
+  background-color: rgb(204, 32, 32);
+  box-shadow: red;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  padding-top: 10rem;
+}
+
+.face-scan-widget {
+  width: 280px;
+  height: 280px;
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 180, 216, 0.2) 0%,
+    rgba(30, 41, 59, 0.8) 100%
+  );
+  box-shadow: inset 0 0 20px rgba(0, 224, 255, 0.2),
+    0 0 30px rgba(0, 224, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.face-scan-widget video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: scaleX(-1); /* Espelhar a imagem da câmera */
+}
+
+.scan-animation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent 48%,
+    rgba(0, 224, 255, 0.1) 50%,
+    transparent 52%
+  );
+  animation: scan-grid 4s linear infinite;
+  z-index: 1;
+}
+
+.scanning-line-effect {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-color) 50%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 5px var(--primary-color));
+  animation: scan-line 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 1;
+}
+
+#mensagem {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  min-height: 2rem;
+  color: var(--primary-color);
+}
+
+.botaoProf {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 40%;
+  gap: 20%;
+}
+
+.buttonProfessor {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(18, 63, 210, 0.613);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid blue;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px blue;
+}
+
+.buttonProfessor:hover {
+  background-color: rgba(0, 17, 255, 0.987);
+  box-shadow: 0 0 15px rgb(0, 4, 255);
+}
+
+.feedback {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(120%);
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.feedback.success {
+  background: rgba(0, 255, 170, 0.15);
+  border: 1px solid #00ffaa;
+  color: #00ffaa;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.feedback.error {
+  background: rgba(255, 77, 125, 0.15);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  place-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(0, 224, 255, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes scan-line {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes scan-grid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes pulse-text {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding-top: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .face-scan-widget {
+    width: 250px;
+    height: 250px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .botaoProf {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    gap: 1rem;
+  }
+
+  .buttonProfessor {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding-top: 3rem;
+  }
+
+  .face-scan-widget {
+    width: 60vw;
+    height: 60vw;
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #mensagem {
+    font-size: 1rem;
+  }
+
+  .buttonVoltar, .buttonProfessor {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+}

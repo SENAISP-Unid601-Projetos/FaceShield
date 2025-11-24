@@ -1,0 +1,196 @@
+:root {
+        --primary-color: #00e0ff;
+        --secondary-color: #0f172a;
+        --accent-color: #ff4d7d;
+        --background-gradient: linear-gradient(
+          135deg,
+          #00141f 0%,
+          #0f172a 40%,
+          #1e293b 100%
+        );
+        --neon-shadow: 0 0 15px var(--primary-color);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--background-gradient);
+        color: white;
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* NOTE: Seu HTML tem divs com as classes 'background', 
+        'background-image', e 'background-overlay' que não 
+        estão sendo usadas por este CSS. O fundo da página 
+        está sendo aplicado diretamente ao 'body'.
+      */
+
+      .main-content {
+        width: 100%;
+        max-width: 800px;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo-container {
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+      }
+
+      .logo {
+        width: 150px;
+        filter: drop-shadow(0 0 15px rgba(0, 224, 255, 0.5));
+        animation: logo-float 3s ease-in-out infinite;
+      }
+
+      .form-container {
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 20px;
+        border: 0px solid rgba(0, 224, 255, 0.2);
+        box-shadow: var(--neon-shadow);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .input-group {
+        position: relative;
+        margin: 1rem 0;
+      }
+
+      /* Removido o seletor 'select' pois não há 'select' no HTML */
+      .input-group input {
+        width: 100%;
+        padding: 1.4rem; /* Corrigido '1.4 rem;' para '1.4rem;' */
+        background: rgba(30, 41, 59, 0.3);
+        border: 1px solid rgba(0, 224, 255, 0.3);
+        border-radius: 8px;
+        color: white;
+      }
+
+      .input-group input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: var(--neon-shadow);
+      }
+
+      .floating-label label {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: rgba(255, 255, 255, 0.6);
+        transition: all 0.3s ease;
+      }
+
+      .input-group input:focus ~ label,
+      .input-group input:valid ~ label {
+        transform: translateY(-34px);
+        font-size: 0.8rem;
+        color: var(--primary-color);
+      }
+
+      .validation-icon {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(0, 224, 255, 0.3);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      .input-group input:valid ~ .validation-icon {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        box-shadow: 0 0 8px var(--primary-color);
+      }
+
+      .botao {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        background: rgba(0, 224, 255, 0.15);
+        border: 2px solid var(--primary-color);
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        text-decoration: none;
+      }
+
+      .botao:hover {
+        background: rgba(0, 224, 255, 0.3);
+        box-shadow: var(--neon-shadow);
+        transform: translateY(-2px);
+      }
+
+      .title {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1rem;
+      }
+
+      .botaoVoltar {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .buttonVoltar {
+        text-decoration: none;
+        color: white;
+        background: red;
+        border: 2px solid red;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .buttonVoltar:hover {
+        background: rgba(255, 0, 0, 0.853);
+      }
+      @keyframes logo-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          padding: 1rem;
+        }
+
+        .form-container {
+          padding: 1.5rem;
+        }
+
+        .logo {
+          width: 120px;
+        }
+      }
