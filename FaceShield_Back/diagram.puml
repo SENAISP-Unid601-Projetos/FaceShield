@@ -1,0 +1,148 @@
+@startuml
+left to right direction
+skinparam classAttributeIconSize 14
+skinparam classFontColor black
+
+' ======= CORES POR ENTIDADE =======
+skinparam class {
+    BackgroundColor<<Usuarios>> #FFD5D5
+    BackgroundColor<<LocaisFerramentas>> #D5E8FF
+    BackgroundColor<<Ferramentas>> #FFF2CC
+    BackgroundColor<<Emprestimos>> #D5FFD5
+    BackgroundColor<<HistoricoTrava>> #E7D5FF
+
+    BorderColor #333
+    Shadowing true
+}
+
+' ======= PACOTES =======
+package "Gerenciamento de Usuários" {
+
+    class Usuarios <<Usuarios>> {
+        - Long id
+        - String nome
+        - String sobrenome
+        - String turma
+        - String username
+        - String senha
+        - String tipoUsuario
+
+        -- MÉTODOS --
+        + getId()
+        + setId(Long)
+        + getNome()
+        + setNome(String)
+        + getSobrenome()
+        + setSobrenome(String)
+        + getTurma()
+        + setTurma(String)
+        + getUsername()
+        + setUsername(String)
+        + getSenha()
+        + setSenha(String)
+        + getTipoUsuario()
+        + setTipoUsuario(String)
+        + toString()
+    }
+
+    class HistoricoTrava <<HistoricoTrava>> {
+        - Long id
+        - LocalDateTime dataHora_abertura
+
+        -- MÉTODOS --
+        + getId()
+        + setId(Long)
+        + getDataHora_abertura()
+        + setDataHora_abertura(LocalDateTime)
+        + toString()
+    }
+}
+
+package "Inventário" {
+
+    class LocaisFerramentas <<LocaisFerramentas>> {
+        - Long id
+        - String nomeEspaco
+        - String armario
+        - String prateleira
+        - String estojo
+
+        -- MÉTODOS --
+        + getId()
+        + setId(Long)
+        + getNomeEspaco()
+        + setNomeEspaco(String)
+        + getArmario()
+        + setArmario(String)
+        + getPrateleira()
+        + setPrateleira(String)
+        + getEstojo()
+        + setEstojo(String)
+        + toString()
+    }
+
+    class Ferramentas <<Ferramentas>> {
+        - Long id
+        - String nome
+        - String marca
+        - String modelo
+        - String qrcode
+        - String estado
+        - boolean disponibilidade
+        - String descricao
+
+        -- MÉTODOS --
+        + getId()
+        + setId(Long)
+        + getNome()
+        + setNome(String)
+        + getMarca()
+        + setMarca(String)
+        + getModelo()
+        + setModelo(String)
+        + getQrcode()
+        + setQrcode(String)
+        + getEstado()
+        + setEstado(String)
+        + isDisponibilidade()
+        + setDisponibilidade(boolean)
+        + getDescricao()
+        + setDescricao(String)
+        + toString()
+    }
+}
+
+package "Movimentações" {
+
+    class Emprestimos <<Emprestimos>> {
+        - Long id
+        - LocalDateTime data_retirada
+        - LocalDateTime data_devolucao
+        - String observacoes
+
+        -- MÉTODOS --
+        + getId()
+        + setId(Long)
+        + getData_retirada()
+        + setData_retirada(LocalDateTime)
+        + getData_devolucao()
+        + setData_devolucao(LocalDateTime)
+        + getObservacoes()
+        + setObservacoes(String)
+        + toString()
+    }
+}
+
+' ======= RELACIONAMENTOS =======
+
+Usuarios "1" --> "0..*" Emprestimos : realiza >
+Usuarios "1" --> "0..*" HistoricoTrava : registra >
+
+Ferramentas "1" --> "0..*" Emprestimos : emprestada por >
+
+LocaisFerramentas "1" --> "0..*" Ferramentas : possui >
+
+Emprestimos "N" --> "1" Usuarios : usuário >
+Emprestimos "N" --> "1" Ferramentas : ferramenta >
+
+@enduml

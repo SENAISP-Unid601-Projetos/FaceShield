@@ -1,0 +1,73 @@
+@startuml
+left to right direction
+
+' ====== SKINPARAMS (cores e estilo profissional) ======
+skinparam actorStyle stickman
+skinparam usecase {
+    BackgroundColor #F2F2F2
+    BorderColor #333
+    ArrowColor #555
+    Shadowing true
+    FontStyle bold
+}
+skinparam packageStyle rectangle
+skinparam package {
+    BackgroundColor #E8E8E8
+    BorderColor #555
+}
+
+' ====== Atores ======
+actor "Aluno\n(Usuário Comum)" as A #LightBlue
+actor "Professor\n(Admin)" as P #LightGreen
+
+' ====== Pacote: Autenticação ======
+package "Autenticação" #DDEEFF {
+    usecase "Login por\nReconhecimento Facial" as UC_Face
+    usecase "Login por\nUsuário e Senha" as UC_Senha
+}
+
+' ====== Pacote: Empréstimos ======
+package "Empréstimos" #FFF2CC {
+    usecase "Emprestar Ferramenta\n(Leitura de QRCode)" as UC_Emprestimo
+    usecase "Devolver Ferramenta" as UC_Devolucao
+}
+
+' ====== Pacote: Inventário ======
+package "Inventário" #FFEEDD {
+    usecase "Visualizar Ferramentas" as UC_VisuFerr
+    usecase "Abrir Trava de Armário" as UC_Trava
+    usecase "Consultar Histórico" as UC_Historico
+}
+
+' ====== Pacote: Administração ======
+package "Administração (Professor)" #E0FFD8 {
+    usecase "Gerenciar Usuários" as UC_GerUsuarios
+    usecase "Gerenciar Ferramentas" as UC_GerFerramentas
+    usecase "Gerenciar Locais" as UC_GerLocais
+}
+
+' ====== Relações do Aluno ======
+A --> UC_Face
+A --> UC_Emprestimo
+
+' ====== Relações do Professor ======
+P --> UC_Face
+P --> UC_Senha
+P --> UC_VisuFerr
+P --> UC_Emprestimo
+P --> UC_Devolucao
+P --> UC_Trava
+P --> UC_Historico
+P --> UC_GerUsuarios
+P --> UC_GerFerramentas
+P --> UC_GerLocais
+
+' ====== Include/extends para lógica de permissão ======
+UC_Emprestimo --> UC_Face : <<include>>
+UC_Devolucao --> UC_Face : <<include>>
+
+UC_GerUsuarios --> UC_Senha : <<include>>
+UC_GerFerramentas --> UC_Senha : <<include>>
+UC_GerLocais --> UC_Senha : <<include>>
+
+@enduml
