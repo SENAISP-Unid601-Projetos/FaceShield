@@ -86,7 +86,7 @@ async function registrarEmprestimo(userId, numeroQrCode, token) {
     );
     mostrarLoading(false);
     setTimeout(() => {
-      window.location.href = "/front/Html/Login.html";
+      window.location.href = "/front/index.html";
     }, 1500);
     return;
   }
@@ -204,7 +204,7 @@ async function registrarEmprestimo(userId, numeroQrCode, token) {
     mostrarLoading(false);
 
     setTimeout(() => {
-      window.location.href = "/front/Html/Login.html";
+      window.location.href = "/front/index.html";
     }, 3000);
   } catch (error) {
     console.error("Erro ao registrar operação:", error);
@@ -283,7 +283,7 @@ window.addEventListener("DOMContentLoaded", () => {
     mensagem.textContent = "Você precisa fazer o login facial primeiro.";
     mostrarFeedback("Não autenticado. Redirecionando...", "error");
     setTimeout(() => {
-      window.location.href = "/front/Html/Login.html";
+      window.location.href = "/front/index.html";
     }, 2000);
   } else {
     mensagem.textContent = `Olá, ${username}. Aponte para o QR Code.`;
