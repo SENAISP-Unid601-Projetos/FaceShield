@@ -35,6 +35,9 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+                        // LIBERA OS ENDPOINTS DE HEALTH CHECK
+                        .requestMatchers("/api/health", "/health", "/api/status").permitAll()
+
                         // Libera os endpoints de autenticação
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/auth/register/{id}").permitAll()
