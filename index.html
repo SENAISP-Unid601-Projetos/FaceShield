@@ -1,154 +1,385 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FaceShield - Biometria Facial Inteligente</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Style/Styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechFlow - Soluções em Gestão de Ativos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./Style/Styles.css" />
     <script src="./Script/Scripts.js" defer></script>
-    <link rel="icon" href="https://placehold.co/32x32?text=FS">
-</head>
-<body>
+    <link rel="icon" href="https://placehold.co/32x32?text=TF" />
+  </head>
+  <body>
     <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <img src="./Assets/logo.png" class="logo-img">
-                <span>FaceShield</span>
-            </a>
-            
-            <button class="mobile-menu" aria-label="Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links">
-                <li><a href="#inicio" class="nav-link active" data-translate="menu.home">Início</a></li>
-                <li><a href="#beneficios" class="nav-link" data-translate="menu.benefits">Benefícios</a></li>
-                <li><a href="#sobre" class="nav-link" data-translate="menu.about">Sobre Nós</a></li>
-                <li><a href="#tecnologia" class="nav-link" data-translate="menu.tech">Tecnologia</a></li>
-                <li><a href="#contato" class="nav-link" data-translate="menu.contact">Contato</a></li>
-                <li class="language-selector" id="languageSelector">
-                    <img src="https://flagcdn.com/w40/br.png" id="flagIcon" class="flag-icon" alt="Português">
-                    <span id="languageText" data-translate="language">PT</span>
-                </li>
-            </ul>
-            
-            <div class="nav-overlay"></div>
-        </nav>
+      <nav class="nav-container">
+        <a href="#" class="logo">
+          <img
+            src="./Assets/TechFlow-Logo.png"
+            class="logo-img"
+            alt="Logo TechFlow"
+          />
+          <span>TechFlow</span>
+        </a>
+
+        <button class="mobile-menu" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-links">
+          <li>
+            <a href="#inicio" class="nav-link active" data-translate="menu.home"
+              >Início</a
+            >
+          </li>
+          <li>
+            <a
+              href="#funcionalidades"
+              class="nav-link"
+              data-translate="menu.features"
+              >O Sistema</a
+            >
+          </li>
+          <li>
+            <a href="#sobre" class="nav-link" data-translate="menu.about"
+              >Quem Somos</a
+            >
+          </li>
+          <li>
+            <a href="#tecnologia" class="nav-link" data-translate="menu.tech"
+              >Tecnologia</a
+            >
+          </li>
+          <li>
+            <a href="#contato" class="nav-link" data-translate="menu.contact"
+              >Contato</a
+            >
+          </li>
+          <li class="language-selector" id="languageSelector">
+            <img
+              src="https://flagcdn.com/w40/br.png"
+              id="flagIcon"
+              class="flag-icon"
+              alt="Português"
+            />
+            <span id="languageText" data-translate="language">PT</span>
+          </li>
+        </ul>
+
+        <div class="nav-overlay"></div>
+      </nav>
     </header>
 
-    <!-- Seção Hero com CTA -->
     <section class="hero" id="inicio" data-aos="fade-up">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 data-translate="hero.title">Revolução em Autenticação Biométrica</h1>
-                <p data-translate="hero.subtitle">Sistema inteligente de reconhecimento facial com criptografia de última geração para segurança máxima</p>
-                <a href="https://www.linkedin.com/in/kau%C3%A3-frenedozo-8641492b5/" class="cta-button" data-translate="hero.button">Solicitar Demonstração</a>
-            </div>
-            <div class="hero-visual">
-                <div class="face-scan" data-aos="zoom-in-left"></div>
-            </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 data-translate="hero.title">
+            FaceShield: Gestão de Ferramentas com Reconhecimento Facial
+          </h1>
+          <p data-translate="hero.subtitle">
+            Controle total de empréstimos, validação de usuários e
+            rastreabilidade de ativos em um único sistema desenvolvido pela
+            TechFlow.
+          </p>
+
+          <ul class="hero-list">
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span data-translate="hero.list1"
+                >Empréstimos Validados por Biometria</span
+              >
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span data-translate="hero.list2">Histórico Completo de Uso</span>
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i>
+              <span data-translate="hero.list3"
+                >Gestão de Estoque e Locais</span
+              >
+            </li>
+          </ul>
+
+          <a
+            href="https://github.com/FaceShield-SENAI-TCC"
+            class="cta-button"
+            data-translate="hero.button"
+            >Ver Demonstração</a
+          >
         </div>
+
+        <div class="hero-visual">
+          <div class="face-scan" data-aos="zoom-in-left">
+            <iframe
+              src="https://www.youtube.com/embed/O_xq88-_dBg?rel=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Seção de Benefícios -->
-    <section class="benefits" id="beneficios">
-        <div class="benefits-container">
-            <div class="benefits-header" data-aos="fade-up">
-                <h2 data-translate="benefits.title">Soluções Inteligentes para Segurança Avançada</h2>
-                <p data-translate="benefits.subtitle">Nossa tecnologia de biometria facial oferece benefícios exclusivos para empresas que valorizam segurança e eficiência</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-shield-alt benefit-icon"></i>
-                    <h3 data-translate="benefits.card1.title">Segurança Máxima</h3>
-                    <p data-translate="benefits.card1.desc">Proteja seus sistemas com tecnologia de ponta</p>
-                    <ul>
-                        <li data-translate="benefits.card1.item1">Autenticação facial precisa e confiável</li>
-                        <li data-translate="benefits.card1.item2">Prevenção contra fraudes e acessos não autorizados</li>
-                        <li data-translate="benefits.card1.item3">Criptografia de dados em tempo real</li>
-                    </ul>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-bolt benefit-icon"></i>
-                    <h3 data-translate="benefits.card2.title">Eficiência Operacional</h3>
-                    <p data-translate="benefits.card2.desc">Agilize processos com autenticação rápida</p>
-                    <ul>
-                        <li data-translate="benefits.card2.item1">Redução de tempo em processos de verificação</li>
-                        <li data-translate="benefits.card2.item2">Automação de controles de acesso</li>
-                        <li data-translate="benefits.card2.item3">Integração simplificada com sistemas existentes</li>
-                    </ul>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-chart-line benefit-icon"></i>
-                    <h3 data-translate="benefits.card3.title">Resultados Comprovados</h3>
-                    <p data-translate="benefits.card3.desc">Maximize o retorno sobre seu investimento</p>
-                    <ul>
-                        <li data-translate="benefits.card3.item1">Redução de custos com segurança</li>
-                        <li data-translate="benefits.card3.item2">Aumento da produtividade da equipe</li>
-                        <li data-translate="benefits.card3.item3">Relatórios detalhados de acesso e uso</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="benefits" id="funcionalidades">
+      <div class="benefits-container">
+        <div class="benefits-header" data-aos="fade-up">
+          <h2 data-translate="features.title">O Que o FaceShield Resolve?</h2>
+          <p data-translate="features.subtitle">
+            Elimine planilhas e perdas. Nosso sistema oferece gerenciamento
+            completo (CRUD) e inteligência de dados.
+          </p>
         </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-boxes benefit-icon"></i>
+            <h3 data-translate="features.card1.title">
+              Gerenciamento Total (CRUD)
+            </h3>
+            <p data-translate="features.card1.desc">
+              Controle absoluto sobre seus ativos.
+            </p>
+            <ul>
+              <li data-translate="features.card1.item1">
+                Cadastro completo de Usuários e Ferramentas
+              </li>
+              <li data-translate="features.card1.item2">
+                Gestão de Locais (Armazéns/Setores)
+              </li>
+              <li data-translate="features.card1.item3">
+                Definição de Estados (Novo, Em uso, Manutenção)
+              </li>
+            </ul>
+          </div>
+
+          <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-user-check benefit-icon"></i>
+            <h3 data-translate="features.card2.title">
+              Empréstimo Inteligente
+            </h3>
+            <p data-translate="features.card2.desc">
+              Segurança na retirada e devolução.
+            </p>
+            <ul>
+              <li data-translate="features.card2.item1">
+                Validação facial obrigatória
+              </li>
+              <li data-translate="features.card2.item2">
+                Busca detalhada de ferramentas disponíveis
+              </li>
+              <li data-translate="features.card2.item3">
+                Processo rápido e sem senhas
+              </li>
+            </ul>
+          </div>
+
+          <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-history benefit-icon"></i>
+            <h3 data-translate="features.card3.title">Histórico e Rastreio</h3>
+            <p data-translate="features.card3.desc">
+              Saiba quem pegou, quando e onde.
+            </p>
+            <ul>
+              <li data-translate="features.card3.item1">
+                Histórico completo de empréstimos
+              </li>
+              <li data-translate="features.card3.item2">
+                Filtros por Localização e Estado
+              </li>
+              <li data-translate="features.card3.item3">
+                Auditoria simplificada de equipamentos
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="content-section" id="sobre">
-        <div class="grid-4">
-            <div class="feature-card" data-aos="fade-up">
-                <div>
-                    <i class="fas fa-user-shield icon-tech"></i>
-                    <h3 data-translate="about.title">Sobre Nós</h3>
-                    <p data-translate="about.text">Estamos desenvolvendo uma solução inovadora que utiliza biometria facial para aumentar a segurança e eficiência no monitoramento
-                         de ferramentas. Nosso objetivo é criar um sistema confiável e intuitivo, integrando tecnologia de reconhecimento facial
-                          e sensores para um controle preciso e automatizado.</p>
-                </div>
-            </div>
+      <div class="about-container">
+        <div class="about-header" data-aos="fade-up">
+          <i class="fas fa-users icon-tech"></i>
+          <h3 data-translate="about.title">Quem Somos Nós</h3>
+          <p data-translate="about.text" class="about-intro">
+            A TechFlow é uma startup dedicada a resolver o caos na gestão de
+            ativos. Desenvolvemos o FaceShield, uma solução robusta que une IoT
+            e Software para garantir que você nunca mais perca uma ferramenta.
+          </p>
         </div>
+
+        <div class="team-grid">
+          <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Gerente+Proj&background=00B4D8&color=fff&size=128"
+                alt="Gerente"
+                class="team-img"
+              />
+            </div>
+            <h4>Kauã Henrique Frenedozo</h4>
+            <span class="role" data-translate="role.pm"
+              >Gerente de Projeto</span
+            >
+            <a
+              href="https://www.linkedin.com/in/kau%C3%A3-frenedozo-8641492b5/?originalSubdomain=br"
+              target="_blank"
+              class="team-social"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Eng+IoT&background=2D3748&color=fff&size=128"
+                alt="IoT"
+                class="team-img"
+              />
+            </div>
+            <h4>Davi Livino Mazoti</h4>
+            <span class="role" data-translate="role.iot"
+              >Engenheiro de IoT</span
+            >
+            <a href="#" target="_blank" class="team-social">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Front+End&background=00B4D8&color=fff&size=128"
+                alt="Front"
+                class="team-img"
+              />
+            </div>
+            <h4>Ana Julia Vieira da Silva</h4>
+            <span class="role" data-translate="role.front">Dev Front-end</span>
+            <a href="#" target="_blank" class="team-social">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Front+End&background=00B4D8&color=fff&size=128"
+                alt="Front"
+                class="team-img"
+              />
+            </div>
+            <h4>Nicole Aguiar Santos</h4>
+            <span class="role" data-translate="role.front">Dev Front-end</span>
+            <a href="#" target="_blank" class="team-social">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Back+End&background=2D3748&color=fff&size=128"
+                alt="Back"
+                class="team-img"
+              />
+            </div>
+            <h4>Rafael Alves Andrade</h4>
+            <span class="role" data-translate="role.back">Dev Back-end</span>
+            <a href="#" target="_blank" class="team-social">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+
+          <div class="team-card" data-aos="fade-up" data-aos-delay="350">
+            <div class="img-wrapper">
+              <img
+                src="https://ui-avatars.com/api/?name=Back+End&background=2D3748&color=fff&size=128"
+                alt="Back"
+                class="team-img"
+              />
+            </div>
+            <h4>Alexandre Elson C. S. Santos</h4>
+            <span class="role" data-translate="role.back">Dev Back-end</span>
+            <a href="#" target="_blank" class="team-social">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="content-section" id="tecnologia">
-        <div class="grid-4">
-            <div class="feature-card" data-aos="fade-up">
-                <div>
-                    <i class="fas fa-brain icon-tech"></i>
-                    <h3 data-translate="tech.title">Tecnologia</h3>
-                    <p data-translate="tech.intro">Nossa solução utiliza tecnologias avançadas para garantir segurança e eficiência no reconhecimento facial.
-                         Entre os principais recursos, destacamos:</p>
-                    <ul style="text-align: left; margin: 1rem 0;">
-                        <li><b data-translate="tech.feature1.title">Reconhecimento 3D anti-fraude</b> <span data-translate="tech.feature1.desc">para evitar tentativas de falsificação.</span></li>
-                        <li><b data-translate="tech.feature2.title">Criptografia avançada</b> <span data-translate="tech.feature2.desc">para proteção de dados com máxima segurança.</span></li>
-                        <li><b data-translate="tech.feature3.title">Processamento em tempo real</b> <span data-translate="tech.feature3.desc">para respostas rápidas e precisas.</span></li>
-                    </ul>
-                </div>
-            </div>
+      <div class="grid-4">
+        <div class="feature-card" data-aos="fade-up">
+          <div>
+            <i class="fas fa-server icon-tech"></i>
+            <h3 data-translate="tech.title">Tecnologia & Arquitetura</h3>
+            <p data-translate="tech.intro">
+              Nosso sistema backend suporta operações complexas em tempo real,
+              garantindo:
+            </p>
+            <ul style="text-align: left; margin: 1rem 0">
+              <li>
+                <b data-translate="tech.feature1.title"
+                  >Reconhecimento Facial:</b
+                >
+                <span data-translate="tech.feature1.desc"
+                  >Validação biométrica para liberar empréstimos.</span
+                >
+              </li>
+              <li>
+                <b data-translate="tech.feature2.title">Busca Inteligente:</b>
+                <span data-translate="tech.feature2.desc"
+                  >Filtros por estado, localização e disponibilidade.</span
+                >
+              </li>
+              <li>
+                <b data-translate="tech.feature3.title">Gestão de Dados:</b>
+                <span data-translate="tech.feature3.desc"
+                  >CRUD completo de usuários, ferramentas e locais.</span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p data-translate="footer.developed">Desenvolvido Por FaceShield - Tecnologia em Biometria Facial</p>
-            
-            <div class="social-links">
-                <a href="https://github.com/FaceShield-SENAI-TCC" class="social-link">
-                    <i class="fab fa-github"></i>
-                    <span data-translate="footer.github">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/kau%C3%A3-frenedozo-8641492b5/" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                    <span data-translate="footer.email">LinkedIn</span>
-                </a>
-            </div>
-            
-            <p>© 2025 FaceShield. <span data-translate="footer.rights">Todos os direitos reservados.</span></p>
+    <footer id="contato">
+      <div class="footer-content">
+        <p data-translate="footer.developed">
+          Desenvolvido Por TechFlow - Soluções em Gestão de Ativos
+        </p>
+
+        <div class="social-links">
+          <a href="https://github.com/FaceShield-SENAI-TCC" class="social-link">
+            <i class="fab fa-github"></i>
+            <span data-translate="footer.github">GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kau%C3%A3-frenedozo-8641492b5/"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span data-translate="footer.email">LinkedIn</span>
+          </a>
         </div>
+
+        <p>
+          © 2025 TechFlow.
+          <span data-translate="footer.rights"
+            >Todos os direitos reservados.</span
+          >
+        </p>
+      </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-</body>
+  </body>
 </html>

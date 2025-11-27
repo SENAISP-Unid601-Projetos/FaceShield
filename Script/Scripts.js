@@ -1,212 +1,261 @@
-
 // Inicialização AOS
 AOS.init({
-    duration: 1000,
-    once: true,
-    easing: 'ease-in-out'
+  duration: 1000,
+  once: true,
+  easing: "ease-in-out",
 });
 
 // Dicionários de tradução
 const translations = {
-    'pt-BR': {
-        'menu.home': 'Início',
-        'menu.benefits': 'Benefícios',
-        'menu.about': 'Sobre Nós',
-        'menu.tech': 'Tecnologia',
-        'menu.contact': 'Contato',
-        'language': 'PT',
-        'hero.title': 'Revolução em Autenticação Biométrica',
-        'hero.subtitle': 'Sistema inteligente de reconhecimento facial com criptografia de última geração para segurança máxima',
-        'hero.button': 'Solicitar Demonstração',
-        'benefits.title': 'Soluções Inteligentes para Segurança Avançada',
-        'benefits.subtitle': 'Nossa tecnologia de biometria facial oferece benefícios exclusivos para empresas que valorizam segurança e eficiência',
-        'benefits.card1.title': 'Segurança Máxima',
-        'benefits.card1.desc': 'Proteja seus sistemas com tecnologia de ponta',
-        'benefits.card1.item1': 'Autenticação facial precisa e confiável',
-        'benefits.card1.item2': 'Prevenção contra fraudes e acessos não autorizados',
-        'benefits.card1.item3': 'Criptografia de dados em tempo real',
-        'benefits.card2.title': 'Eficiência Operacional',
-        'benefits.card2.desc': 'Agilize processos com autenticação rápida',
-        'benefits.card2.item1': 'Redução de tempo em processos de verificação',
-        'benefits.card2.item2': 'Automação de controles de acesso',
-        'benefits.card2.item3': 'Integração simplificada com sistemas existentes',
-        'benefits.card3.title': 'Resultados Comprovados',
-        'benefits.card3.desc': 'Maximize o retorno sobre seu investimento',
-        'benefits.card3.item1': 'Redução de custos com segurança',
-        'benefits.card3.item2': 'Aumento da produtividade da equipe',
-        'benefits.card3.item3': 'Aumento de Organização durante o trabalho remoto',
-        'about.title': 'Sobre Nós',
-        'about.text': 'Estamos desenvolvendo uma solução inovadora que utiliza biometria facial para aumentar a segurança e eficiência no monitoramento de ferramentas. Nosso objetivo é criar um sistema confiável e intuitivo, integrando tecnologia de reconhecimento facial e sensores para um controle preciso e automatizado.',
-        'tech.title': 'Tecnologia',
-        'tech.intro': 'Nossa solução utiliza tecnologias avançadas para garantir segurança e eficiência no reconhecimento facial. Entre os principais recursos, destacamos:',
-        'tech.feature1.title': 'Reconhecimento 3D anti-fraude',
-        'tech.feature1.desc': 'para evitar tentativas de falsificação.',
-        'tech.feature2.title': 'Criptografia avançada',
-        'tech.feature2.desc': 'para proteção de dados com máxima segurança.',
-        'tech.feature3.title': 'Processamento em tempo real',
-        'tech.feature3.desc': 'para respostas rápidas e precisas.',
-        'contact.title': 'Contato',
-        'contact.text': 'Entre em contato conosco através do GitHub para mais informações sobre nossas soluções em biometria facial.',
-        'contact.github': 'Solicitar Orçamento',
-        'footer.developed': 'Desenvolvido Por FaceShield - Tecnologia em Biometria Facial',
-        'footer.github': 'GitHub',
-        'footer.email': 'LinkedIn',
-        'footer.rights': 'Todos os direitos reservados.'
-    },
-    'en-US': {
-        'menu.home': 'Home',
-        'menu.benefits': 'Benefits',
-        'menu.about': 'About Us',
-        'menu.tech': 'Technology',
-        'menu.contact': 'Contact',
-        'language': 'EN',
-        'hero.title': 'Revolution in Biometric Authentication',
-        'hero.subtitle': 'Intelligent facial recognition system with state-of-the-art encryption for maximum security',
-        'hero.button': 'Request a Demo',
-        'benefits.title': 'Smart Solutions for Advanced Security',
-        'benefits.subtitle': 'Our facial biometric technology offers exclusive benefits for companies that value security and efficiency',
-        'benefits.card1.title': 'Maximum Security',
-        'benefits.card1.desc': 'Protect your systems with cutting-edge technology',
-        'benefits.card1.item1': 'Accurate and reliable facial authentication',
-        'benefits.card1.item2': 'Prevention against fraud and unauthorized access',
-        'benefits.card1.item3': 'Real-time data encryption',
-        'benefits.card2.title': 'Operational Efficiency',
-        'benefits.card2.desc': 'Streamline processes with fast authentication',
-        'benefits.card2.item1': 'Reduced time in verification processes',
-        'benefits.card2.item2': 'Automation of access controls',
-        'benefits.card2.item3': 'Simplified integration with existing systems',
-        'benefits.card3.title': 'Proven Results',
-        'benefits.card3.desc': 'Maximize your return on investment',
-        'benefits.card3.item1': 'Reduced security costs',
-        'benefits.card3.item2': 'Increased team productivity',
-        'benefits.card3.item3': 'Increase in Organization during Remote Work',
-        'about.title': 'About Us',
-        'about.text': 'We are developing an innovative solution that uses facial biometrics to enhance security and efficiency in tool monitoring. Our goal is to create a reliable and intuitive system, integrating facial recognition technology and sensors for precise and automated control.',
-        'tech.title': 'Technology',
-        'tech.intro': 'Our solution uses advanced technologies to ensure security and efficiency in facial recognition. Among the main features, we highlight:',
-        'tech.feature1.title': '3D anti-fraud recognition',
-        'tech.feature1.desc': 'to prevent spoofing attempts.',
-        'tech.feature2.title': 'Advanced encryption',
-        'tech.feature2.desc': 'for data protection with maximum security.',
-        'tech.feature3.title': 'Real-time processing',
-        'tech.feature3.desc': 'for fast and accurate responses.',
-        'contact.title': 'Contact',
-        'contact.text': 'Contact us through GitHub for more information about our facial biometric solutions.',
-        'contact.github': 'Request Quote',
-        'footer.developed': 'Developed By FaceShield - Facial Biometrics Technology',
-        'footer.github': 'GitHub',
-        'footer.email': 'LinkedIn',
-        'footer.rights': 'All rights reserved.'
-    }
+  "pt-BR": {
+    "menu.home": "Início",
+    "menu.features": "O Sistema",
+    "menu.about": "Quem Somos",
+    "menu.tech": "Tecnologia",
+    "menu.contact": "Contato",
+    language: "PT",
+
+    // Hero Section
+    "hero.title": "Gestão de Ferramentas com Reconhecimento Facial",
+    "hero.subtitle":
+      "Controle total de empréstimos, validação de usuários e rastreabilidade de ativos em um único sistema.",
+    "hero.list1": "Empréstimos Validados por Biometria",
+    "hero.list2": "Histórico Completo de Uso",
+    "hero.list3": "Gestão de Estoque e Locais",
+    "hero.button": "Ver Demonstração",
+
+    // Features/Benefícios
+    "features.title": "O Que o FaceShield Resolve?",
+    "features.subtitle":
+      "Elimine planilhas e perdas. Nosso sistema oferece gerenciamento completo (CRUD) e inteligência de dados.",
+
+    "features.card1.title": "Gerenciamento Total (CRUD)",
+    "features.card1.desc": "Controle absoluto sobre seus ativos.",
+    "features.card1.item1": "Cadastro completo de Usuários e Ferramentas",
+    "features.card1.item2": "Gestão de Locais (Armazéns/Setores)",
+    "features.card1.item3": "Definição de Estados (Novo, Em uso, Manutenção)",
+
+    "features.card2.title": "Empréstimo Inteligente",
+    "features.card2.desc": "Segurança na retirada e devolução.",
+    "features.card2.item1": "Validação facial obrigatória",
+    "features.card2.item2": "Busca detalhada de ferramentas disponíveis",
+    "features.card2.item3": "Processo rápido e sem senhas",
+
+    "features.card3.title": "Histórico e Rastreio",
+    "features.card3.desc": "Saiba quem pegou, quando e onde.",
+    "features.card3.item1": "Histórico completo de empréstimos",
+    "features.card3.item2": "Filtros por Localização e Estado",
+    "features.card3.item3": "Auditoria simplificada de equipamentos",
+
+    // About/Equipe
+    "about.title": "Quem Somos Nós",
+    "about.text":
+      "A TechFlow é uma startup dedicada a resolver o caos na gestão de ativos. Desenvolvemos o FaceShield, uma solução robusta que une IoT e Software para garantir que você nunca mais perca uma ferramenta.",
+    "role.pm": "Gerente de Projetos",
+    "role.iot": "Engenheiro de IoT",
+    "role.front": "Dev Front-end",
+    "role.back": "Dev Back-end",
+
+    // Tech
+    "tech.title": "Tecnologia & Arquitetura",
+    "tech.intro":
+      "Nosso sistema backend suporta operações complexas em tempo real, garantindo:",
+    "tech.feature1.title": "Reconhecimento Facial:",
+    "tech.feature1.desc": "Validação biométrica para liberar empréstimos.",
+    "tech.feature2.title": "Busca Inteligente:",
+    "tech.feature2.desc": "Filtros por estado, localização e disponibilidade.",
+    "tech.feature3.title": "Gestão de Dados:",
+    "tech.feature3.desc": "Complete CRUD for users, tools, and locations.",
+
+    "contact.title": "Contato",
+    "contact.text": "Entre em contato conosco.",
+    "footer.developed":
+      "Desenvolvido Por TechFlow - Soluções em Gestão de Ativos",
+    "footer.github": "GitHub",
+    "footer.email": "LinkedIn",
+    "footer.rights": "Todos os direitos reservados.",
+  },
+  "en-US": {
+    "menu.home": "Home",
+    "menu.features": "System",
+    "menu.about": "Who We Are",
+    "menu.tech": "Technology",
+    "menu.contact": "Contact",
+    language: "EN",
+
+    // Hero Section
+    "hero.title": "Tool Management with Facial Recognition",
+    "hero.subtitle":
+      "Complete loan control, user validation, and asset traceability in a single system.",
+    "hero.list1": "Biometrically Validated Loans",
+    "hero.list2": "Complete Usage History",
+    "hero.list3": "Inventory and Location Management",
+    "hero.button": "View Demo",
+
+    // Features/Benefits
+    "features.title": "What Does FaceShield Solve?",
+    "features.subtitle":
+      "Eliminate spreadsheets and losses. Our system offers complete management (CRUD) and data intelligence.",
+
+    "features.card1.title": "Total Management (CRUD)",
+    "features.card1.desc": "Absolute control over your assets.",
+    "features.card1.item1": "Complete User and Tool Registration",
+    "features.card1.item2": "Location Management (Warehouses/Sectors)",
+    "features.card1.item3": "State Definition (New, In Use, Maintenance)",
+
+    "features.card2.title": "Smart Lending",
+    "features.card2.desc": "Security in withdrawal and return.",
+    "features.card2.item1": "Mandatory facial validation",
+    "features.card2.item2": "Detailed search for available tools",
+    "features.card2.item3": "Fast and password-free process",
+
+    "features.card3.title": "History & Tracking",
+    "features.card3.desc": "Know who took what, when, and where.",
+    "features.card3.item1": "Complete loan history",
+    "features.card3.item2": "Filters by Location and State",
+    "features.card3.item3": "Simplified equipment auditing",
+
+    // About/Team
+    "about.title": "Who We Are",
+    "about.text":
+      "TechFlow is a startup dedicated to solving chaos in asset management. We develop FaceShield, a robust solution combining IoT and Software to ensure you never lose a tool again.",
+    "role.pm": "Project Manager",
+    "role.iot": "IoT Engineer",
+    "role.front": "Front-end Dev",
+    "role.back": "Back-end Dev",
+
+    // Tech
+    "tech.title": "Technology & Architecture",
+    "tech.intro":
+      "Our backend system supports complex real-time operations, ensuring:",
+    "tech.feature1.title": "Facial Recognition:",
+    "tech.feature1.desc": "Biometric validation to release loans.",
+    "tech.feature2.title": "Smart Search:",
+    "tech.feature2.desc": "Filters by state, location, and availability.",
+    "tech.feature3.title": "Data Management:",
+    "tech.feature3.desc": "Complete CRUD for users, tools, and locations.",
+
+    "contact.title": "Contact",
+    "contact.text": "Contact us.",
+    "footer.developed": "Developed By TechFlow - Asset Management Solutions",
+    "footer.github": "GitHub",
+    "footer.email": "LinkedIn",
+    "footer.rights": "All rights reserved.",
+  },
 };
 
 // Função para trocar idioma
 function changeLanguage(lang) {
-    document.documentElement.lang = lang;
+  document.documentElement.lang = lang;
 
-    // Atualizar todos os elementos com atributo data-translate
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-
-    // Atualizar bandeira e texto do idioma
-    const flagIcon = document.getElementById('flagIcon');
-    const languageText = document.getElementById('languageText');
-
-    if (lang === 'en-US') {
-        flagIcon.src = 'https://flagcdn.com/w40/us.png';
-        flagIcon.alt = 'English';
-    } else {
-        flagIcon.src = 'https://flagcdn.com/w40/br.png';
-        flagIcon.alt = 'Português';
+  // Atualizar todos os elementos com atributo data-translate
+  document.querySelectorAll("[data-translate]").forEach((element) => {
+    const key = element.getAttribute("data-translate");
+    if (translations[lang][key]) {
+      element.textContent = translations[lang][key];
     }
+  });
 
-    // Salvar preferência de idioma
-    localStorage.setItem('preferredLanguage', lang);
+  // Atualizar bandeira e texto do idioma
+  const flagIcon = document.getElementById("flagIcon");
+  const languageText = document.getElementById("languageText");
+
+  if (lang === "en-US") {
+    flagIcon.src = "https://flagcdn.com/w40/us.png";
+    flagIcon.alt = "English";
+  } else {
+    flagIcon.src = "https://flagcdn.com/w40/br.png";
+    flagIcon.alt = "Português";
+  }
+
+  // Salvar preferência de idioma
+  localStorage.setItem("preferredLanguage", lang);
 }
 
 // Configurar evento de clique no seletor de idioma
-document.getElementById('languageSelector').addEventListener('click', function () {
+document
+  .getElementById("languageSelector")
+  .addEventListener("click", function () {
     const currentLang = document.documentElement.lang;
-    const newLang = currentLang === 'pt-BR' ? 'en-US' : 'pt-BR';
+    const newLang = currentLang === "pt-BR" ? "en-US" : "pt-BR";
     changeLanguage(newLang);
-});
+  });
 
 // Verificar se há uma preferência de idioma salva
-const savedLanguage = localStorage.getItem('preferredLanguage');
+const savedLanguage = localStorage.getItem("preferredLanguage");
 if (savedLanguage) {
-    changeLanguage(savedLanguage);
+  changeLanguage(savedLanguage);
 }
 
 // Menu Mobile
-const menuButton = document.querySelector('.mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-const navOverlay = document.querySelector('.nav-overlay');
+const menuButton = document.querySelector(".mobile-menu");
+const navLinks = document.querySelector(".nav-links");
+const navOverlay = document.querySelector(".nav-overlay");
 
 // Abrir/fechar menu
-menuButton.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+menuButton.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  document.body.style.overflow = navLinks.classList.contains("active")
+    ? "hidden"
+    : "";
 });
 
 // Fechar menu ao clicar no overlay
-navOverlay.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    document.body.style.overflow = '';
+navOverlay.addEventListener("click", () => {
+  navLinks.classList.remove("active");
+  document.body.style.overflow = "";
 });
 
 // Fechar menu ao clicar nos links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-    });
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    document.body.style.overflow = "";
+  });
 });
 
 // Smooth Scroll e Ativação de Links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const target = document.querySelector(targetId);
-        const headerHeight = document.querySelector('.header').offsetHeight;
+document.querySelectorAll(".nav-link").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href");
+    const target = document.querySelector(targetId);
+    const headerHeight = document.querySelector(".header").offsetHeight;
 
-        // Scroll suave
-        window.scrollTo({
-            top: target.offsetTop - headerHeight,
-            behavior: 'smooth'
-        });
-
-        // Ativar link clicado
-        document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
-        link.classList.add('active');
+    window.scrollTo({
+      top: target.offsetTop - headerHeight,
+      behavior: "smooth",
     });
+
+    document
+      .querySelectorAll(".nav-link")
+      .forEach((nav) => nav.classList.remove("active"));
+    link.classList.add("active");
+  });
 });
 
 // Atualizar links ativos no scroll
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".header");
+  header.classList.toggle("scrolled", window.scrollY > 50);
 
-    // Verificar posição das seções
-    const sections = document.querySelectorAll('.content-section, .hero, .benefits');
-    let current = '';
+  const sections = document.querySelectorAll(
+    ".content-section, .hero, .benefits"
+  );
+  let current = "";
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 150) {
-            current = section.getAttribute('id');
-        }
-    });
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
 });
