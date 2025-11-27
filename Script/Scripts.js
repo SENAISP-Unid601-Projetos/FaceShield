@@ -146,17 +146,15 @@ const translations = {
 
 // Função para trocar idioma
 function changeLanguage(lang) {
-  document.documentElement.lang = lang;
+  document.documentElement.lang = lang; // Atualizar todos os elementos com atributo data-translate
 
-  // Atualizar todos os elementos com atributo data-translate
   document.querySelectorAll("[data-translate]").forEach((element) => {
     const key = element.getAttribute("data-translate");
     if (translations[lang][key]) {
       element.textContent = translations[lang][key];
     }
-  });
+  }); // Atualizar bandeira e texto do idioma
 
-  // Atualizar bandeira e texto do idioma
   const flagIcon = document.getElementById("flagIcon");
   const languageText = document.getElementById("languageText");
 
@@ -166,9 +164,8 @@ function changeLanguage(lang) {
   } else {
     flagIcon.src = "https://flagcdn.com/w40/br.png";
     flagIcon.alt = "Português";
-  }
+  } // Salvar preferência de idioma
 
-  // Salvar preferência de idioma
   localStorage.setItem("preferredLanguage", lang);
 }
 
