@@ -2,22 +2,20 @@ FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-# Copiar apenas o necessário
-COPY pom.xml .
-COPY mvnw .
-RUN chmod +x ./mvnw
+# Instalar Maven primeiro
+RUN apk add --no-cache maven
 
-# Instalar Maven wrapper se não existir
-RUN ./mvnw wrapper:wrapper -Dmaven=3.8.1 || true
+# Copiar apenas o necessário para cache de dependências
+COPY pom.xml .
 
 # Baixar dependências
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # Copiar código fonte
 COPY src ./src
 
 # Compilar
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 EXPOSE 8080
 
