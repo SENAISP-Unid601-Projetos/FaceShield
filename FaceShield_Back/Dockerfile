@@ -1,11 +1,11 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app
 
-# Instalar Maven primeiro
+# Instalar Maven
 RUN apk add --no-cache maven
 
-# Copiar apenas o necessário para cache de dependências
+# Copiar pom.xml primeiro para cache de dependências
 COPY pom.xml .
 
 # Baixar dependências
