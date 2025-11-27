@@ -10,6 +10,22 @@ import java.util.Map;
 
 @RestController
 public class HealthController {
+    @GetMapping("/")
+    public ResponseEntity<Map<String, Object>> home() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "🚀 FaceShield API está online e funcionando!");
+        response.put("status", "success");
+        response.put("timestamp", LocalDateTime.now().toString());
+        response.put("service", "FaceShield Backend");
+        response.put("version", "1.0.0");
+        response.put("endpoints", Map.of(
+                "health", "/health",
+                "api_health", "/api/health",
+                "api_status", "/api/status"
+        ));
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/api/health")
     public ResponseEntity<Map<String, Object>> healthCheck() {
         Map<String, Object> response = new HashMap<>();
