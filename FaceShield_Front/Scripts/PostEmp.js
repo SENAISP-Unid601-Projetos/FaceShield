@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080";
+const API_BASE = "https://faceshield-back.onrender.com";
 const API_ALUNOS = `${API_BASE}/usuarios/buscar`;
 const API_FERRAMENTAS = `${API_BASE}/ferramentas/buscar`;
 const API_EMPRESTIMOS = `${API_BASE}/emprestimos/novoEmprestimo`;

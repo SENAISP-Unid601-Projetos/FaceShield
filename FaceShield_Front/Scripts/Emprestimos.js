@@ -27,7 +27,7 @@ const modalLocationShelf = document.getElementById("modal-location-shelf");
 const modalLocationCase = document.getElementById("modal-location-case");
 
 // URLs da API
-const API_BASE = "http://localhost:8080";
+const API_BASE = "https://faceshield-back.onrender.com";
 const EMPRESTIMOS_API = `${API_BASE}/emprestimos/buscar`;
 const FINALIZAR_EMPRESTIMO_API = `${API_BASE}/emprestimos/finalizar`;
 const FERRAMENTAS_API = `${API_BASE}/ferramentas/buscar`;
