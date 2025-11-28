@@ -251,7 +251,7 @@ function reconhecerFace(imageData) {
           `Login realizado com sucesso! Bem-vindo, ${username}.`
         );
 
-        // Primeiro registra o login para obter o token e AGUARDA a conclusão
+        // Primeiro registra o login para obter o token
         registrarLoginFacial(username, id)
           .then((token) => {
             console.log("Token obtido com sucesso");
@@ -259,31 +259,34 @@ function reconhecerFace(imageData) {
             // SÓ REGISTRA HISTÓRICO SE FOR ALUNO
             if (tipoUsuario === "ALUNO") {
               console.log("Usuário é ALUNO, registrando histórico de trava...");
-              // USA A FUNÇÃO CORRIGIDA PARA OBTER A DATA/HORA
               const dataHoraAtual = toISOLocalString(getDataHoraBrasilia());
-              registrarHistoricoTrava(id, dataHoraAtual, token);
-            } else {
-              console.log(
-                "Usuário é PROFESSOR, não registra histórico de trava."
+
+              // Aguarda o registro do histórico antes de redirecionar
+              return registrarHistoricoTrava(id, dataHoraAtual, token).then(
+                () => {
+                  console.log("Redirecionando para QR Code...");
+                  window.location.href = "/Html/QrCode.html";
+                }
               );
+            } else {
+              console.log("Usuário é PROFESSOR, redirecionando para Menu...");
+              window.location.href = "/Html/Menu.html";
             }
           })
           .catch((error) => {
             console.error("Erro ao obter token:", error);
-            // Só tenta registrar histórico sem token se for ALUNO
+            // Redireciona mesmo com erro, mas tenta registrar histórico se for aluno
             if (tipoUsuario === "ALUNO") {
               const dataHoraAtual = toISOLocalString(getDataHoraBrasilia());
-              registrarHistoricoTrava(id, dataHoraAtual, null);
+              registrarHistoricoTrava(id, dataHoraAtual, null).finally(() => {
+                console.log("Redirecionando para QR Code (com erro)...");
+                window.location.href = "/Html/QrCode.html";
+              });
+            } else {
+              console.log("Redirecionando para Menu (com erro)...");
+              window.location.href = "/Html/Menu.html";
             }
           });
-
-        setTimeout(() => {
-          if (tipoUsuario === "PROFESSOR") {
-            window.location.href = "/Html/Menu.html";
-          } else {
-            window.location.href = "/Html/QrCode.html";
-          }
-        }, 100);
       } else {
         mensagem.textContent =
           data.message || "Usuário não reconhecido. Tente novamente.";
