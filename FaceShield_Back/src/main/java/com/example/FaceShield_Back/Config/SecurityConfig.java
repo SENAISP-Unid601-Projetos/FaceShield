@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         // LIBERA OS ENDPOINTS DE HEALTH CHECK
-                        .requestMatchers("/api/health", "/health", "/api/status").permitAll()
+                        .requestMatchers("/", "/api/health", "/health", "/api/status").permitAll()
 
                         // Libera os endpoints de autenticação
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
