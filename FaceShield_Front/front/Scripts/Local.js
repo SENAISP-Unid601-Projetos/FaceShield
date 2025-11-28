@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:8080/locais/buscar";
-const API_DELETE = "http://localhost:8080/locais/deletar";
-const API_POST = "http://localhost:8080/locais/novoLocal";
-const API_EDITAR = "http://localhost:8080/locais/editar";
+const API_URL = "https://faceshield-back.onrender.com/locais/buscar";
+const API_DELETE = "https://faceshield-back.onrender.com/locais/deletar";
+const API_POST = "https://faceshield-back.onrender.com/locais/novoLocal";
+const API_EDITAR = "https://faceshield-back.onrender.com/locais/editar";
 
 // Elementos DOM
 const locationsTableBody = document.getElementById("locations-table-body");
@@ -37,7 +37,7 @@ let locations = [];
  */
 function getAuthHeaders(includeContentType = false) {
   const token = localStorage.getItem("authToken");
- // console.log("Token", token);
+  // console.log("Token", token);
   if (!token) {
     alert("Sessão expirada ou usuário não logado.");
     window.location.href = "/front/Html/Login.html";

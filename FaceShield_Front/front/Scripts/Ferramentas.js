@@ -22,13 +22,17 @@ const notification = document.getElementById("notification");
 const loadingOverlay = document.getElementById("loading-overlay");
 
 // Constantes da API Java (porta 8080) - USARÃO TOKEN
-const Ferramenta_GET = "http://localhost:8080/ferramentas/buscar";
-const Ferramenta_POST = "http://localhost:8080/ferramentas/novaFerramenta";
-const Ferramenta_PUT = "http://localhost:8080/ferramentas/editar";
-const Ferramenta_DELETE = "http://localhost:8080/ferramentas/deletar";
+const Ferramenta_GET =
+  "https://faceshield-back.onrender.com/ferramentas/buscar";
+const Ferramenta_POST =
+  "https://faceshield-back.onrender.com/ferramentas/novaFerramenta";
+const Ferramenta_PUT =
+  "https://faceshield-back.onrender.com/ferramentas/editar";
+const Ferramenta_DELETE =
+  "https://faceshield-back.onrender.com/ferramentas/deletar";
 const Ferramenta_GET_BY_QRCODE =
   "http://localhost:5000/ferramentas/buscarPorQRCode";
-const locais_get = "http://localhost:8080/locais/buscar";
+const locais_get = "https://faceshield-back.onrender.com/locais/buscar";
 
 const QR_SCAN_API = "http://localhost:5000/read-qrcode";
 

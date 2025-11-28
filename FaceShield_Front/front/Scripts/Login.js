@@ -96,7 +96,8 @@ function capturarEReconhecer() {
 }
 
 function registrarLoginFacial(username, id) {
-  const URL_REGISTRO = "http://localhost:8080/auth/generate-token";
+  const URL_REGISTRO =
+    "https://faceshield-back.onrender.com/auth/generate-token";
 
   console.log(`Registrando evento de login para: ${username} (ID: ${id})`);
 
@@ -110,18 +111,21 @@ function registrarLoginFacial(username, id) {
     }),
   })
     .then((response) => {
+      console.log(`Resposta do servidor - Status: ${response.status}`);
+
       if (!response.ok) {
-        console.warn(
-          `Não foi possível registrar o evento de login. Status: ${response.status}`
-        );
-        return Promise.reject(
-          `Erro ${response.status}: ${response.statusText}`
-        );
+        // Tenta obter mais detalhes do erro
+        return response.text().then((text) => {
+          console.error(`Resposta de erro: ${text}`);
+          throw new Error(
+            `Erro ${response.status}: ${response.statusText} - ${text}`
+          );
+        });
       }
       return response.json();
     })
     .then((data) => {
-      console.log("Token recebido:", data);
+      console.log("Resposta completa do backend:", data);
 
       if (data.token) {
         localStorage.setItem("authToken", data.token);
@@ -130,12 +134,24 @@ function registrarLoginFacial(username, id) {
         console.log("authToken, Username e ID salvos no localStorage.");
         return data.token;
       } else {
-        console.warn("Token não encontrado na resposta do backend Java.");
-        throw new Error("Token não recebido");
+        console.warn("Token não encontrado na resposta:", data);
+        throw new Error("Token não recebido na resposta");
       }
     })
     .catch((error) => {
-      console.error("Erro ao registrar evento de login:", error);
+      console.error("Erro completo ao registrar evento de login:", error);
+
+      // Verifica se é erro de CORS
+      if (
+        error.message.includes("Failed to fetch") ||
+        error.message.includes("NetworkError")
+      ) {
+        console.error("❌ ERRO DE REDE/CORS - Verifique:");
+        console.error("1. Backend Spring Boot está online?");
+        console.error("2. Endpoint /auth/generate-token existe?");
+        console.error("3. CORS está configurado no Spring Boot?");
+      }
+
       throw error;
     });
 }
@@ -161,7 +177,8 @@ function toISOLocalString(date) {
 }
 
 function registrarHistoricoTrava(usuarioId, dataHoraAbertura, token) {
-  const URL_HISTORICO_TRAVA = "http://localhost:8080/historico-trava/novoLog";
+  const URL_HISTORICO_TRAVA =
+    "https://faceshield-back.onrender.com/historico-trava/novoLog";
 
   // Criando o objeto no formato esperado pelo backend
   const historicoData = {

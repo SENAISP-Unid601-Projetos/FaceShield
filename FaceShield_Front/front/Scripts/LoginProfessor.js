@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const username = document.getElementById("username").value;
     const senha = document.getElementById("senha").value;
 
-    const apiUrl = "http://localhost:8080/auth/login";
+    const apiUrl = "https://faceshield-back.onrender.com/auth/login";
 
     try {
       const response = await fetch(apiUrl, {

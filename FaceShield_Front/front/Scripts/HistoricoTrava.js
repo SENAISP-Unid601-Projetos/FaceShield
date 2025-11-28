@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/historico-trava";
+const API_BASE = "https://faceshield-back.onrender.com/historico-trava";
 const API_GET = `${API_BASE}/buscar`;
 
 function getAuthHeaders() {

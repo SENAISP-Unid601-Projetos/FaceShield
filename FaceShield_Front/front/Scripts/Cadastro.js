@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const turmaInput = document.getElementById("turma");
   const viewCameraBtn = document.querySelector(".view-camera-btn");
 
-  const API_BASE_URL = "http://localhost:8080/auth/register";
+  const API_BASE_URL = "https://faceshield-back.onrender.com/auth/register";
   const CAPTURE_API_URL = "http://localhost:7001";
 
   /**
@@ -425,9 +425,9 @@ document.addEventListener("DOMContentLoaded", () => {
         scanInstruction.textContent = "Clique para captura biométrica";
         scanWidget.style.background = "";
         scanWidget.classList.remove("capture-success");
-        
+
         // Redireciona para a página de usuários, já que o login foi feito
-        window.location.href = "Login.html"; 
+        window.location.href = "Login.html";
       } else {
         const errorMsg =
           responseData.message ||

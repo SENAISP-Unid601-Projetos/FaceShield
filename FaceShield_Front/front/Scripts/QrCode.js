@@ -8,7 +8,7 @@ let canvas = canvasElement.getContext("2d");
 let scanning = false;
 
 // URLs FINAIS E FIXAS
-const BASE_URL = "http://localhost:8080/emprestimos";
+const BASE_URL = "https://faceshield-back.onrender.com/emprestimos";
 const URL_EMPRESTIMO = `${BASE_URL}/novoEmprestimoQrcode`; // POST
 const URL_DEVOLUCAO = `${BASE_URL}/finalizarEmprestimoQrcode`; // PUT
 

@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/usuarios";
+const API_BASE = "https://faceshield-back.onrender.com/usuarios";
 const API_GET = `${API_BASE}/buscar`;
 const API_POST = `${API_BASE}/novoUsuario`;
 const API_PUT = `${API_BASE}/editar`;
