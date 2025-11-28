@@ -7,7 +7,7 @@ function getAuthHeaders() {
 
   if (!token) {
     alert("Sessão expirada. Faça login novamente.");
-    window.location.href = "/front/Html/Login.html";
+    window.location.href = "/Html/Login.html";
     throw new Error("Token não encontrado.");
   }
 
@@ -20,7 +20,7 @@ function getAuthHeaders() {
 async function handleResponseError(response) {
   if (response.status === 401 || response.status === 403) {
     alert("Acesso negado. Faça login novamente.");
-    window.location.href = "/front/Html/Login.html";
+    window.location.href = "/Html/Login.html";
     throw new Error("Acesso não autorizado.");
   }
   const errorText = await response.text();

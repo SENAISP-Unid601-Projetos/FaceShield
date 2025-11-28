@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("username", data.username);
           localStorage.setItem("id", data.id);
 
-          window.location.href = "/front/Html/Menu.html";
+          window.location.href = "/Html/Menu.html";
         } else {
           alert("Erro: Token não recebido do servidor.");
         }

@@ -279,9 +279,9 @@ function reconhecerFace(imageData) {
 
         setTimeout(() => {
           if (tipoUsuario === "PROFESSOR") {
-            window.location.href = "/front/Html/Menu.html";
+            window.location.href = "/Html/Menu.html";
           } else {
-            window.location.href = "/front/Html/QrCode.html";
+            window.location.href = "/Html/QrCode.html";
           }
         }, 100);
       } else {

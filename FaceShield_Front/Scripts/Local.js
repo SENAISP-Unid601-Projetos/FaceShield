@@ -40,7 +40,7 @@ function getAuthHeaders(includeContentType = false) {
   // console.log("Token", token);
   if (!token) {
     alert("Sessão expirada ou usuário não logado.");
-    window.location.href = "/front/Html/Login.html";
+    window.location.href = "/Html/Login.html";
     throw new Error("Token não encontrado. Redirecionando para login.");
   }
 
@@ -63,7 +63,7 @@ async function handleResponseError(response) {
   if (response.status === 401 || response.status === 403) {
     // Token inválido ou expirado
     alert("Acesso negado. Sua sessão pode ter expirado. Faça login novamente.");
-    window.location.href = "/front/Html/Login.html";
+    window.location.href = "/Html/Login.html";
     throw new Error("Acesso não autorizado (401/403).");
   }
 

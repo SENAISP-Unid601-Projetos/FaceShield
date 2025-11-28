@@ -50,7 +50,7 @@ body {
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .imagemheader {
@@ -62,11 +62,11 @@ body {
 .main-title {
   text-align: center;
   font-weight: 600;
-  font-size: clamp(1.8rem, 4vw, 2.5rem); 
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   letter-spacing: 3px;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   margin-left: 1rem;
-  margin-top: 0.5rem; 
+  margin-top: 0.5rem;
 }
 
 .face-recognition-container {
@@ -82,7 +82,7 @@ body {
   border: 3px solid var(--primary-color);
   border-radius: 50%;
   overflow: hidden;
-  background: #0a0e14 url("/front/Assets/ImagemRecon.png") center/cover;
+  background: #0a0e14 url("/Assets/ImagemRecon.png") center/cover;
   transform-style: preserve-3d;
 }
 

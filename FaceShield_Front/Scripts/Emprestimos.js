@@ -75,7 +75,7 @@ async function handleResponseError(response) {
   if (response.status === 401 || response.status === 403) {
     // CORREÇÃO 2: Removido o 'error' que não estava definido
     alert("Acesso negado. Sua sessão pode ter expirado. Faça login novamente.");
-    window.location.href = "/front/Html/Login.html";
+    window.location.href = "/Html/Login.html";
     throw new Error("Acesso não autorizado (401/403).");
   }
 
