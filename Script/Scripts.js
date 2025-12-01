@@ -74,6 +74,10 @@ const translations = {
     "footer.github": "GitHub",
     "footer.email": "LinkedIn",
     "footer.rights": "Todos os direitos reservados.",
+
+    // Créditos do Desenvolvedor (NOVO)
+    "footer.credits":
+      "Desenvolvido por <strong>Kauã Henrique Frenedozo</strong>",
   },
   "en-US": {
     "menu.home": "Home",
@@ -141,42 +145,47 @@ const translations = {
     "footer.github": "GitHub",
     "footer.email": "LinkedIn",
     "footer.rights": "All rights reserved.",
+
+    // Developer Credits (NEW)
+    "footer.credits": "Developed by <strong>Kauã Henrique Frenedozo</strong>",
   },
 };
 
 // Função para trocar idioma
 function changeLanguage(lang) {
-  document.documentElement.lang = lang; // Atualizar todos os elementos com atributo data-translate
+  document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-translate]").forEach((element) => {
     const key = element.getAttribute("data-translate");
     if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
+      element.innerHTML = translations[lang][key];
     }
-  }); // Atualizar bandeira e texto do idioma
+  });
 
+  // Atualizar bandeira e texto do idioma
   const flagIcon = document.getElementById("flagIcon");
-  const languageText = document.getElementById("languageText");
-
+ 
   if (lang === "en-US") {
     flagIcon.src = "https://flagcdn.com/w40/us.png";
     flagIcon.alt = "English";
   } else {
     flagIcon.src = "https://flagcdn.com/w40/br.png";
     flagIcon.alt = "Português";
-  } // Salvar preferência de idioma
+  }
 
+  // Salvar preferência de idioma
   localStorage.setItem("preferredLanguage", lang);
 }
 
 // Configurar evento de clique no seletor de idioma
-document
-  .getElementById("languageSelector")
-  .addEventListener("click", function () {
+const langSelector = document.getElementById("languageSelector");
+if (langSelector) {
+  langSelector.addEventListener("click", function () {
     const currentLang = document.documentElement.lang;
     const newLang = currentLang === "pt-BR" ? "en-US" : "pt-BR";
     changeLanguage(newLang);
   });
+}
 
 // Verificar se há uma preferência de idioma salva
 const savedLanguage = localStorage.getItem("preferredLanguage");
@@ -189,40 +198,47 @@ const menuButton = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 const navOverlay = document.querySelector(".nav-overlay");
 
-// Abrir/fechar menu
-menuButton.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-  document.body.style.overflow = navLinks.classList.contains("active")
-    ? "hidden"
-    : "";
-});
+if (menuButton && navLinks && navOverlay) {
+  // Abrir/fechar menu
+  menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    document.body.style.overflow = navLinks.classList.contains("active")
+      ? "hidden"
+      : "";
+  });
 
-// Fechar menu ao clicar no overlay
-navOverlay.addEventListener("click", () => {
-  navLinks.classList.remove("active");
-  document.body.style.overflow = "";
-});
-
-// Fechar menu ao clicar nos links
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
+  // Fechar menu ao clicar no overlay
+  navOverlay.addEventListener("click", () => {
     navLinks.classList.remove("active");
     document.body.style.overflow = "";
   });
-});
+
+  // Fechar menu ao clicar nos links
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+}
 
 // Smooth Scroll e Ativação de Links
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const targetId = link.getAttribute("href");
-    const target = document.querySelector(targetId);
-    const headerHeight = document.querySelector(".header").offsetHeight;
+    if (targetId && targetId !== "#") {
+      const target = document.querySelector(targetId);
+      const header = document.querySelector(".header");
+      const headerHeight = header ? header.offsetHeight : 0;
 
-    window.scrollTo({
-      top: target.offsetTop - headerHeight,
-      behavior: "smooth",
-    });
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - headerHeight,
+          behavior: "smooth",
+        });
+      }
+    }
 
     document
       .querySelectorAll(".nav-link")
@@ -234,7 +250,9 @@ document.querySelectorAll(".nav-link").forEach((link) => {
 // Atualizar links ativos no scroll
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header");
-  header.classList.toggle("scrolled", window.scrollY > 50);
+  if (header) {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  }
 
   const sections = document.querySelectorAll(
     ".content-section, .hero, .benefits"
@@ -243,7 +261,6 @@ window.addEventListener("scroll", () => {
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
     if (window.scrollY >= sectionTop - 150) {
       current = section.getAttribute("id");
     }
