@@ -74,7 +74,7 @@ function iniciarReconhecimentoFacial() {
     if (!isProcessing) {
       capturarEReconhecer();
     }
-  }, 1000);
+  }, 500);
 }
 
 function capturarEReconhecer() {
